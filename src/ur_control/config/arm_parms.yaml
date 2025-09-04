@@ -1,0 +1,23 @@
+home: [0.12, -0.2, 0.2, 180, 0, 0]
+
+self_collision_barrier:
+  x_min: -0.200
+  x_max: 0.200
+  y_min: -0.18
+  y_max: 0.030
+
+workspace_min:
+  x: -0.650
+  y: -0.500
+  z: 0.035
+
+workspace_max:
+  x: 0.650
+  y: 0.030
+  z: 0.400
+
+workspace_circle:
+  center: [0.0, 0.0]
+  radius: 0.650
+  cutoff: 0.030
+  direction: "negative"

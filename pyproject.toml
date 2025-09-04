@@ -1,0 +1,26 @@
+[project]
+name = "ur_control"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Pablo Ortega", email = "2001.paok@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "inputs>=0.5",
+    "matplotlib>=3.10.6",
+    "numpy>=2.3.2",
+    "pyaml>=25.7.0",
+    "scipy>=1.16.1",
+    "shapely>=2.1.1",
+    "uc-micro-py>=1.0.3",
+    "ur-rtde>=1.6.1",
+]
+
+[project.scripts]
+ur-control = "ur_control:main"
+
+[build-system]
+requires = ["uv_build>=0.8.4,<0.9.0"]
+build-backend = "uv_build"
