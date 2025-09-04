@@ -108,7 +108,7 @@ def load_geometry_from_yaml(yaml_path: str):
     return workspace_poly, barrier_poly, safe_zone_poly, zmin, zmax
 
 def plot_geometry(workspace: Polygon, barrier: Polygon, safe_zone: Polygon,
-                  ax=None, figsize=(8,5)):
+                  ax=None, figsize=(8,5), out_dir = "logs/"):
     """
     Plots workspace (green), barrier (red), and safe_zone (light green).
     """
@@ -132,7 +132,9 @@ def plot_geometry(workspace: Polygon, barrier: Polygon, safe_zone: Polygon,
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_title('Workspace with Self-Collision Barrier & Safe-Zone')
-    plt.savefig('workspace_geometry.png', dpi=300)
+    path = out_dir + 'workspace_geometry.png'
+    plt.savefig(path, dpi=300)
+    print(f"Saved workspace geometry plot to: {path}")
     
 def clamp_point_to_safe_zone(
         pt: tuple[float, float, float],
@@ -168,10 +170,6 @@ def clamp_point_to_safe_zone(
         cz = min(max(z, z_min), z_max)
         return (cx, cy, cz)
     
-import numpy as np
-
-import matplotlib.pyplot as plt
-
 def order_points_by_closeness(points: np.ndarray) -> np.ndarray:
     n = len(points)
     ordered = [0]

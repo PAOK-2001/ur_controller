@@ -224,15 +224,7 @@ def robot_control_thread(handler, controller : Ur5EController, hz = 100):
 
 
 
-if __name__ == "__main__":
-    import argparse 
-    # Add arm type argument
-    parser = argparse.ArgumentParser(description="Teleoperation for robotic arm using joystick.")
-    parser.add_argument("--arm_type", type=str, default="xarm", choices=["xarm", "ur5e"], help="Type of robotic arm to control.")
-    args = parser.parse_args()
-    
-    arm_type = args.arm_type.lower()
-    
+if __name__ == "__main__":    
     handler = StrikerJoystickHandler()
 
     controller = Ur5EController(robot_ip="192.168.0.15")
