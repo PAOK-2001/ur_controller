@@ -21,7 +21,7 @@ source control_env/bin/activate
 uv pip install -e .
 ```
 
-For configuration of the UR5 arm, see [docs/arm_configuration](docs/arm_configuration).
+For configuration of the UR5 arm, see [docs/arm_configuration](docs/arm_configuration.md).
 
 ## Architecture
 
